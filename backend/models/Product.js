@@ -21,7 +21,7 @@ const DownloadSchema = new mongoose.Schema(
     },
     fileUrl: {
       type: String,
-      required: true,
+      required: false,
     },
     photo: {
       data: Buffer,
@@ -29,17 +29,17 @@ const DownloadSchema = new mongoose.Schema(
     },
     price: {
       type: Number,
-      required: true,
+      required: false,
     },
     category: {
       type: ObjectId,
       ref: "Category",
-      required: true,
+      required: false,
     },
 
     isPaid: {
       type: Boolean,
-      required: true,
+      required: false,
       default: true,
     },
     buyers: [

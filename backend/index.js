@@ -5,7 +5,6 @@ const products = require("./routes/products");
 const mongoose = require("mongoose");
 
 dotenv.config();
-
 app.use("/products", products);
 
 app.get("/", (req, res) => {
@@ -19,7 +18,7 @@ mongoose
   })
   .catch((err) => {
     console.log("DB Error = ", err);
-  });
+});
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
