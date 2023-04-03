@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema;
+const User = require("./User")
 
 const DownloadSchema = new mongoose.Schema(
   {
