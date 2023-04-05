@@ -57,4 +57,4 @@ const DownloadSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Download", DownloadSchema);
+module.exports = mongoose.model("Products", DownloadSchema);

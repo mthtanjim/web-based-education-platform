@@ -9,7 +9,6 @@ const {
   productByCategory,
 } = require("../controllers/category");
 const { requireSignin, isAdmin } = require("../middlewares/auth");
-
 router.post("/", requireSignin, isAdmin, create);
 router.put("/:categoryId", requireSignin, isAdmin, update);
 router.delete("/:categoryId", requireSignin, isAdmin, remove);

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mthtanjim/web-based-education-platform#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bpmn-to-image": "^0.6.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

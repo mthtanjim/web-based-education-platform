@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Product</title>
+  </head>
+  <body>
+    <h1>Create Product</h1>
+    <form id="create-product-form">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required><br><br>
+      <label for="slug">Slug:</label>
+      <input type="text" id="slug" name="slug"><br><br>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea><br><br>
+      <label for="fileUrl">File URL:</label>
+      <input type="text" id="fileUrl" name="fileUrl"><br><br>
+      <label for="photo">Photo:</label>
+      <input type="file" id="photo" name="photo"><br><br>
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price"><br><br>
+      <label for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="">Select Category</option>
+        <option value="category-1">Category 1</option>
+        <option value="category-2">Category 2</option>
+        <option value="category-3">Category 3</option>
+      </select><br><br>
+      <label for="isPaid">Is Paid:</label>
+      <input type="checkbox" id="isPaid" name="isPaid" checked><br><br>
+      <input type="submit" value="Create Product">
+    </form>
+    
+    <script>
+      const form = document.getElementById('create-product-form');
+      
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(form);
+        
+        const response = await fetch('http://localhost:5000/', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          alert('Product created successfully!');
+          form.reset();
+        } else {
+          const error = await response.text();
+          alert(error);
+        }
+      });
+    </script>
+  </body>
+</html>

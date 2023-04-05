@@ -17,7 +17,17 @@ const requireSignin = (req, res, next) => {
 const isAdmin = async (req, res, next) => {
   const user = await User.findById(req.decoded);
 
-  if (user?.role == 1) {
+  if (user?.role == "admin") {
+    console.log("Condition is Okey");
+    next();
+  } else {
+    res.status(401).send("Unauthorized..");
+  }
+};
+const isInstructor = async (req, res, next) => {
+  const user = await User.findById(req.decoded);
+
+  if (user?.role == "instructor") {
     console.log("Condition is Okey");
     next();
   } else {
@@ -25,4 +35,6 @@ const isAdmin = async (req, res, next) => {
   }
 };
 
-module.exports = { requireSignin, isAdmin };
+
+
+module.exports = { requireSignin, isAdmin, isInstructor };

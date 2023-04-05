@@ -3,6 +3,7 @@ const app = express();
 const dotenv = require("dotenv");
 const products = require("./routes/products");
 const category = require("./routes/category");
+const authRoutes = require("./routes/auth");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
@@ -30,6 +31,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 //router middleware
+app.use("/", authRoutes);
 app.use("/products", products);
 app.use("/category", category);
 
