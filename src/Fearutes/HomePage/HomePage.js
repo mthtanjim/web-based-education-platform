@@ -5,6 +5,8 @@ import HeadingText from '../../Component/HeadingText/HeadingText'
 import Blog from '../../Component/Blog/Blog'
 import SuiteCourse from '../../Component/SuiteCourse/SuiteCourse'
 import Categories from '../../Component/Categories/Categories'
+import ReviewTop from '../../Component/ReviewTop/ReviewTop'
+import Review from '../../Component/Review/Review'
 
 
 const HomePage = () => {
@@ -16,6 +18,8 @@ const HomePage = () => {
             <Categories />
             <Blog />
             <SuiteCourse />
+            <ReviewTop />
+            <Review />
         </div>
     )
 }
