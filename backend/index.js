@@ -10,6 +10,7 @@ const morgan = require("morgan");
 
 dotenv.config();
 app.use(cors());
+
 app.get("/", (req, res) => {
   res.status(200).send("Web Based Education Platform");
 });

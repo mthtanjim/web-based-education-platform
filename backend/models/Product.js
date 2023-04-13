@@ -28,6 +28,16 @@ const DownloadSchema = new mongoose.Schema(
       data: Buffer,
       contentType: String,
     },
+    qty: {
+      type: Number,
+      required: false,
+      default: 1000
+    },
+    sold: {
+      type: Number,
+      required: false,
+      default: 0
+    },
     price: {
       type: Number,
       required: false,
