@@ -7,6 +7,7 @@ import SuiteCourse from '../../Component/SuiteCourse/SuiteCourse'
 import Categories from '../../Component/Categories/Categories'
 import ReviewTop from '../../Component/ReviewTop/ReviewTop'
 import Review from '../../Component/Review/Review'
+import Mentor from '../../Component/Mentor/Mentor'
 
 
 const HomePage = () => {
@@ -20,6 +21,7 @@ const HomePage = () => {
             <SuiteCourse />
             <ReviewTop />
             <Review />
+            <Mentor />
         </div>
     )
 }
