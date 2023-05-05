@@ -1,12 +1,12 @@
 const Download = require("../models/product");
-const fs = require("fs")
+const fs = require("fs");
 
 const CreateProduct = async (req, res, next) => {
   try {
     // Check if required fields are provided
     const { title, description, fileUrl, price, isPaid, category } = req.fields;
 
-    const {photo} = req.files;
+    const { photo } = req.files;
 
     console.log("req.file---", photo);
 
@@ -43,8 +43,7 @@ const CreateProduct = async (req, res, next) => {
     //Save the new download to the database
     const savedDownload = await download.save();
 
-      res.status(201).json(savedDownload);
-    
+    res.status(201).json(savedDownload);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
@@ -58,7 +57,7 @@ const EditProduct = async (req, res) => {
     // Check if required fields are provided
     const { title, description, fileUrl, price, isPaid, category } = req.fields;
 
-    const {photo} = req.files;
+    const { photo } = req.files;
 
     console.log("req.file---", photo);
 
@@ -131,7 +130,6 @@ const DeleteProduct = async (req, res) => {
   }
 };
 
-
 const getAllProducts = async (req, res) => {
   try {
     const downloads = await Download.find().populate("seller buyers");
@@ -160,4 +158,11 @@ const getProductById = async (req, res) => {
   }
 };
 
-module.exports = { CreateProduct, DeleteProduct, getAllProducts, EditProduct, DeleteProduct, getProductById };
+module.exports = {
+  CreateProduct,
+  DeleteProduct,
+  getAllProducts,
+  EditProduct,
+  DeleteProduct,
+  getProductById,
+};
