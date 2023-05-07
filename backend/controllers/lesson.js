@@ -13,11 +13,10 @@ const CreateLesson = async (req, res, next) => {
           course,
           quizzes
         });
-    
         // Save the new lesson object to the database
         const savedLesson = await newLesson.save();
-    
         res.status(201).json({ lesson: savedLesson });
+        // res.status(201).json({ lesson: "success post lesson" });
       } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Server error: failed to upload lesson." });
@@ -37,7 +36,7 @@ const DeleteLesson = async (req, res, next) => {
         }
     
         // Delete the lesson
-        await lessonToDelete.remove();
+        await lessonToDelete.deleteOne({_id: id});
     
         return res.json({ message: 'Lesson deleted successfully' });
       } catch (error) {

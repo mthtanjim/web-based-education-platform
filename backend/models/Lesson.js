@@ -16,11 +16,11 @@ const LessonSchema = new mongoose.Schema(
     },
     videoUrl: {
       type: String,
-      required: true,
+      required: false,
     },
     duration: {
       type: Number,
-      required: true,
+      required: false,
     },
     course: {
       type: mongoose.Schema.Types.ObjectId,
