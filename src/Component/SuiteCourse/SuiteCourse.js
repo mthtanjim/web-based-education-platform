@@ -6,7 +6,7 @@ import Button from '../Button/Button'
 
 const SuiteCourse = () => {
     return (
-        <div className='pt-5 pb-16 bg-cyan-100 px-5 mb-10'>
+        <div className='pt-5 pb-16 bg-cyan-100 px-5 mb-20'>
             <HeadingText description={'In publishing and graphic design, Lorem ipsum is a '} heText={'Course Subjects to suit you'} />
             <div className='grid grid-cols-3 gap-6'>
                 {

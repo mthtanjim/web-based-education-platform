@@ -3,9 +3,9 @@ import Button from '../Button/Button'
 
 const Blog = () => {
     return (
-        <div className='flex mb-10'>
-            <div className='mr-20'>
-                <img className='rounded-md' src="https://cdn.pixabay.com/photo/2018/02/27/10/49/training-3185170__480.jpg" alt="" />
+        <div className='flex mb-10 justify-evenly items-center'>
+            <div className='mr-20 h-[500px]'>
+                <img className='rounded-md h-[500px]' src="https://cdn.pixabay.com/photo/2018/02/27/10/49/training-3185170__480.jpg" alt="" />
             </div>
             <div>
                 <h1 className='text-4xl'>We Are Always Ensure Best <br />

@@ -8,6 +8,8 @@ import Categories from '../../Component/Categories/Categories'
 import ReviewTop from '../../Component/ReviewTop/ReviewTop'
 import Review from '../../Component/Review/Review'
 import Mentor from '../../Component/Mentor/Mentor'
+import Subscribe from '../../Component/Subscribe/Subscribe'
+import Footer from '../../Component/Footer/Footer'
 
 
 const HomePage = () => {
@@ -22,6 +24,8 @@ const HomePage = () => {
             <ReviewTop />
             <Review />
             <Mentor />
+            <Subscribe />
+            <Footer />
         </div>
     )
 }
