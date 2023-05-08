@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const products = require("./routes/products");
 const category = require("./routes/category");
 const lesson = require("./routes/lesson")
+const course = require("./routes/course")
 const authRoutes = require("./routes/auth");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -37,6 +38,7 @@ app.use("/", authRoutes);
 app.use("/products", products);
 app.use("/category", category);
 app.use("/lesson", lesson)
+app.use("/course", course)
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {

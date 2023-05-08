@@ -1,13 +1,22 @@
 const Lesson = require("../models/Lesson");
 const Course = require("../models/Course");
+const { body, validationResult } = require('express-validator');
 
 const CreateCourse = async (req, res, next) => {
   try {
     const { title, description, level, duration, prerequisites, requirements } =
       req.body;
-
-    // Validate and sanitize input
-    // ...
+      validation  
+      await body('title').isString().trim().escape().isLength({ min: 1, max: 100 }).run(req);
+      await body('description').isString().trim().escape().isLength({ min: 1, max: 1000 }).run(req);
+      await body('level').isString().trim().escape().isIn(['beginner', 'intermediate', 'advanced']).optional().run(req);
+      await body('duration').isNumeric().toInt().isInt({ min: 1 }).run(req);
+      await body('prerequisites.*').isString().trim().escape().isLength({ max: 100 }).optional().run(req);
+      await body('requirements.*').isString().trim().escape().isLength({ max: 100 }).optional().run(req);
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+      }
 
     const course = new Course({
       title,
@@ -21,6 +30,7 @@ const CreateCourse = async (req, res, next) => {
     await course.save();
 
     res.status(201).json({ message: "Course created successfully", course });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });
@@ -28,8 +38,9 @@ const CreateCourse = async (req, res, next) => {
 };
 
 const GetCourse = async (req, res) => {
+ 
   const courseId = req.params.id;
-
+console.log("id, ", courseId)
   try {
     const course = await Course.findById(courseId).populate("lessons");
 
