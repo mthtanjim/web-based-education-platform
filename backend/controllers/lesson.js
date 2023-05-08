@@ -2,7 +2,7 @@ const Lesson = require("../models/Lesson")
 
 const CreateLesson = async (req, res, next) => {
     try {
-        const { title, description, videoUrl, duration, course, quizzes } = req.body;
+        const { title, description, videoUrl, duration, courseId, quizzes } = req.body;
     
         // Create a new lesson object
         const newLesson = new Lesson({
@@ -10,7 +10,7 @@ const CreateLesson = async (req, res, next) => {
           description,
           videoUrl,
           duration,
-          course,
+          courseId,
           quizzes
         });
         // Save the new lesson object to the database
