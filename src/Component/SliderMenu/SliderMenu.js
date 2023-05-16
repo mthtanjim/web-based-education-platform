@@ -13,8 +13,8 @@ const SliderMenu = () => {
                 </div>
             </div>
             <div>
-                <img className='rounded-md'
-                    src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg' />
+                <img className='rounded-md object-cover'
+                    src='https://ouch-cdn2.icons8.com/BGs-PEnjzctdATydOAoBteLhI0OTePDXEIkOdEjMgOA/rs:fit:512:512/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjg0/LzQxOTkxOWRkLTVh/MDMtNDZlZi04Zjdk/LWZlNmNhZTE3NDk2/Ny5wbmc.png' />
             </div>
         </div>
     )

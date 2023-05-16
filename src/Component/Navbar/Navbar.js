@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div class="grid grid-col-3 grid-flow-col gap-4 py-3 content-center items-center">
             <div>
-                <h1 className='text-xl font-bold '>Edux</h1>
+                <h1 className='text-4xl font-bold '>Edux</h1>
             </div>
             <div className='flex justify-self-center'>
                 {

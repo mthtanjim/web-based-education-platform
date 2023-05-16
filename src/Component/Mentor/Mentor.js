@@ -3,8 +3,8 @@ import mentorData from '../../rawDataFile/mentor'
 
 const Mentor = () => {
     return (
-        <div className='py-10 bg-blue-400 mb-10'>
-            <h1 className='text-center text-2xl font-semibold text-white'>Meet Our Expert Mentor</h1>
+        <div className='py-10  bg-cyan-100 mb-10'>
+            <h1 className='text-center text-2xl font-semibold text-black'>Meet Our Expert Mentor</h1>
             <div className='flex gap-5 p-5 object-cover '>
                 {
                     mentorData.map(mentor =>
@@ -17,7 +17,7 @@ const Mentor = () => {
                 }
             </div>
             <div className='flex justify-center '>
-                <button className='text-centerz hover:scale-105  bg-blue-600 p-3 text-white rounded-sm'> All Expert Mentor</button>
+                <button className='text-centerz hover:scale-105   bg-cyan-300 p-3 text-black rounded-sm'> All Expert Mentor</button>
             </div>
         </div>
     )
